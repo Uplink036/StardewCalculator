@@ -19,9 +19,9 @@ architecture-beta
 ```mermaid
 architecture-beta
     group application[Application]
-    service controller(server)[Controller] in application
-    service model(server)[Model] in application
-    service view(material-symbols:123)[View] in application
+    service controller(internet)[Controller] in application
+    service model(disk)[Model] in application
+    service view(cloud)[View] in application
 
 
     controller:L <--> R:model
