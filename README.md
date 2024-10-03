@@ -1,11 +1,7 @@
 # StardewValleyCalculator
 
 ## Introduction
-
-TODO: Add brief introduction.
-
-TODO: Add image that helps to understand the project.
-This could be an architectural diagram or a screenshot of the application.
+A web based calcualtor, written in C#, with stardew valley based paramaters. 
 
 ## Architecture Overview (optional)
 
