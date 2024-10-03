@@ -3,7 +3,7 @@
 ## Introduction
 A web based calcualtor, written in C#, with stardew valley based paramaters. 
 
-## Architecture Overview (optional)
+## Architecture Overview
 
 ```mermaid
 architecture-beta
@@ -14,6 +14,18 @@ architecture-beta
 
     user:R --> L:stardew
     database:L --> R:stardew
+```
+
+```mermaid
+architecture-beta
+    group application[Application]
+    service controller(server)[Controller] in application
+    service model(server)[Model] in application
+    service view(material-symbols:123)[View] in application
+
+
+    controller:L <--> R:model
+    controller:R <--> L:view 
 ```
 
 ## How to Use
