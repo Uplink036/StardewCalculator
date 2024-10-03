@@ -1,15 +1,36 @@
 # StardewValleyCalculator
 
 ## Introduction
+A web based calcualtor, written in C#, with stardew valley based paramaters. 
 
-TODO: Add brief introduction.
+## Architecture Overview
 
-TODO: Add image that helps to understand the project.
-This could be an architectural diagram or a screenshot of the application.
+```mermaid
+architecture-beta
+    group context(internet)[Context Diagram]
+    service database(database)[Database] in context
+    service user(internet)[User] in context
+    service stardew(server)[Stardew Calculator] in context
 
-## Architecture Overview (optional)
+    user:R --> L:stardew
+    database:L <--> R:stardew
+```
 
-TODO: Add simple diagram that explains the architecture.
+```mermaid
+architecture-beta
+    group application(disk)[Application]
+    service controller(internet)[Controller] in application
+    service model(disk)[Model] in application
+    service view(cloud)[View] in application
+    junction junctionLeft in application
+    junction junctionRight in application
+
+
+    controller:R <-- L:junctionLeft
+    controller:L <-- R:junctionRight
+    model:T <-- B:junctionLeft
+    view:T <-- B:junctionRight
+```
 
 ## How to Use
 
