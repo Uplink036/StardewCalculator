@@ -22,10 +22,14 @@ architecture-beta
     service controller(internet)[Controller] in application
     service model(disk)[Model] in application
     service view(cloud)[View] in application
+    junction junctionLeft in application
+    junction junctionRight in application
 
 
-    controller:L <--> R:model
-    controller:R <--> L:view 
+    controller:R <-- L:junctionLeft
+    controller:L <-- R:junctionRight
+    model:T <-- B:junctionLeft
+    view:T <-- B:junctionRight
 ```
 
 ## How to Use
