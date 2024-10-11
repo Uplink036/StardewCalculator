@@ -1,4 +1,4 @@
-﻿namespace StadewCalculator.Models;
+﻿namespace StardewCalculator.Components.Classes;
 
 public class StringCalculator
 {
