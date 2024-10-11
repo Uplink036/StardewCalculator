@@ -1,5 +1,5 @@
 namespace StardewCalculator.Tests;
-using StadewCalculator.Models;
+using StardewCalculator.Components.Classes;
 public class Tests
 {
     [SetUp]
