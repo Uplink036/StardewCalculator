@@ -1,3 +1,6 @@
+dev:
+	dotnet watch --project StardewCalculator
+
 http:
 	dotnet run --project StardewCalculator
 
