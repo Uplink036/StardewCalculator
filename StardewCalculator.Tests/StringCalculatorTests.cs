@@ -24,7 +24,7 @@ public class Tests
     {
         StringCalculator testObject = new StringCalculator();
         Assert.That(testObject.stringToFloat("0"), Is.EqualTo(0.0f));
-        Assert.That(testObject.stringToFloat("-1"), Is.EqualTo(1.0f));
+        Assert.That(testObject.stringToFloat("-1"), Is.EqualTo(-1.0f));
         Assert.That(testObject.stringToFloat("1"), Is.EqualTo(1.0f));
     }
 }
