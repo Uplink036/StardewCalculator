@@ -23,8 +23,8 @@ public class Tests
     public void TeststringToFloatReturns()
     {
         StringCalculator testObject = new StringCalculator();
-        Assert.AreEqual(testObject.stringToFloat("0"), 0.0F);
-        Assert.AreEqual(testObject.stringToFloat("-1"), -1.0F);
-        Assert.AreEqual(testObject.stringToFloat("1"), 1.0F);
+        Assert.That(testObject.stringToFloat("0"), Is.EqualTo(0.0f));
+        Assert.That(testObject.stringToFloat("-1"), Is.EqualTo(1.0f));
+        Assert.That(testObject.stringToFloat("1"), Is.EqualTo(1.0f));
     }
 }
