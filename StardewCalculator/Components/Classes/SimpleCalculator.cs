@@ -4,12 +4,13 @@ namespace StardewCalculator.Components.Classes
 {
     public class SimpleCalculator
     {
-        private float lhs, rhs;
+        public float lhs;
+        private float rhs;
         private char op;
         public SimpleCalculator() {
             lhs = 0;
             rhs = 0;
-            op = '+';
+            op = '=';
         }
 
         public float calculate()
@@ -28,20 +29,35 @@ namespace StardewCalculator.Components.Classes
                 case '/':
                     lhs = lhs / rhs;
                     break;
+                case '=':
+                    lhs = rhs;
+                    break;
                 default:
                     throw new InvalidOperationException();
             }
+            rhs = 0;
             return lhs;
         }
 
         public void setOp(char op)
-        { 
+        {
+            if (lhs == 0)
+            {
+                lhs = rhs;
+                rhs = 0;
+            }
             this.op = op; 
         }
 
         public void add(float input)
         {
+
             rhs = rhs * 10 + input; // Add the input to the number
+        }
+
+        public void clear()
+        {
+            lhs = 0;
         }
     }
 }
