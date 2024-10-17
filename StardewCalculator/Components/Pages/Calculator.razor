@@ -5,22 +5,34 @@
 <PageTitle> StardewCalculator </PageTitle>
 <h3>Calculator</h3>
 
-<ul>
-    Result = <input @bind="result"/>
-</ul>
+<div class="calculator">
 
-<input placeholder="Calculate String" @bind="inputString" />
-<button @onclick="calculate">Calculate</button>
+    <div class="calculator__output">
+        @result
+    </div>
+    
+    <div class="calculator__keys">
+        <button class="calculator__key calculator__key--operator">+</button>
+        <button class="calculator__key calculator__key--operator">-</button>
+        <button class="calculator__key calculator__key--operator">&times;</button>
+        <button class="calculator__key calculator__key--operator">÷</button>
+        <button class="calculator__key">7</button>
+        <button class="calculator__key">8</button>
+        <button class="calculator__key">9</button>
+        <button class="calculator__key">4</button>
+        <button class="calculator__key">5</button>
+        <button class="calculator__key">6</button>
+        <button class="calculator__key">1</button>
+        <button class="calculator__key">2</button>
+        <button class="calculator__key">3</button>
+        <button class="calculator__key">0</button>
+        <button class="calculator__key">.</button>
+        <button class="calculator__key">AC</button>
+        <button class="calculator__key calculator__key--enter">=</button>
+    </div>
+</div>
+
 
 @code {
-    private StringCalculator parser = new StringCalculator();
-    private float result = 0;
-    private string? inputString;
-    private void calculate()
-    {
-        if (!string.IsNullOrWhiteSpace(inputString))
-        {
-            result =  parser.stringToFloat(inputString);
-        }
-    }
+    private float result = 4;
 }
