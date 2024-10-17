@@ -8,7 +8,7 @@
 <div class="calculator">
 
     <div class="calculator__output">
-        0
+        @result
     </div>
     
     <div class="calculator__keys">
@@ -32,23 +32,7 @@
     </div>
 </div>
 
-<ul>
-    Result =
-    <input @bind="result" />
-</ul>
-
-<input placeholder="Calculate String" @bind="inputString" />
-<button @onclick="calculate">Calculate</button>
 
 @code {
-    private StringCalculator parser = new StringCalculator();
-    private float result = 0;
-    private string? inputString;
-    private void calculate()
-    {
-        if (!string.IsNullOrWhiteSpace(inputString))
-        {
-            result =  parser.stringToFloat(inputString);
-        }
-    }
+    private float result = 4;
 }
