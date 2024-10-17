@@ -1,6 +1,6 @@
 namespace StardewCalculator.Tests;
 using StardewCalculator.Components.Classes;
-public class Tests
+public class StringCalculatorTests
 {
     [SetUp]
     public void Setup()
