@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StardewCalculator\StadewCalculator.csproj" />
+    <ProjectReference Include="..\StardewCalculator\StardewCalculator.csproj" />
   </ItemGroup>
 
 </Project>
