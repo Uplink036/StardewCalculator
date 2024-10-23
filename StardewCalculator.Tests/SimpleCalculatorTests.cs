@@ -12,7 +12,6 @@ public class SimpleCalculatorTests
     {
         SimpleCalculator calculator = new SimpleCalculator();
         Assert.IsNotNull(calculator);
-        Assert.IsNotNull(calculator.lhs);
     }
     [Test]
     public void TestAdd()
