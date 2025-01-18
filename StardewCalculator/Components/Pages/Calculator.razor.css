@@ -12,11 +12,32 @@
 .calculator__output {
     background: hsl(255, 100%, 100%);
     font-size: 4.2rem;
-    padding-block-start: 3rem;
-    padding-block-end: 0.5rem;
-    padding-inline-end: 1.25rem;
+    padding-block-start: 1rem;
+    padding-block-end: 1rem;
+    padding-inline-start: 0.5rem;
+    padding-inline-end: 0.5rem;
+    text-align: end;
+    border: double;
+}
+
+.calculator__output__result {
+    background: hsl(0, 80%, 100%);
+    border: double;
+}
+
+.calculator__output__current {
+    display inline: 
+    width: 50%;
+    height: 100%;
     text-align: end;
 }
+
+.calculator__output__operator {
+    display: inline;
+    height: 100%;
+    text-align: start;
+}
+
 
 .calculator__keys {
     display: grid;
