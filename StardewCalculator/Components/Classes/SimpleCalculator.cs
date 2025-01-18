@@ -5,8 +5,8 @@ namespace StardewCalculator.Components.Classes
     public class SimpleCalculator
     {
         public float lhs;
-        private float rhs;
-        private char op;
+        public float rhs;
+        public char op;
         public SimpleCalculator() {
             lhs = 0;
             rhs = 0;

@@ -8,7 +8,15 @@
 <div class="calculator">
 
     <div class="calculator__output">
-        @calculator.lhs
+        <div class="calculator__output__result">
+            @calculator.lhs
+        </div>
+        <div class="calculator__output__current">
+            @calculator.rhs
+            <div class="calculator__output__operator">
+                [@calculator.op]
+            </div>
+        </div>
     </div>
     
     <div class="calculator__keys">
