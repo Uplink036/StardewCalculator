@@ -34,6 +34,16 @@ architecture-beta
 
 ## How to Use
 
+You can run `make help` in the terminal to see the following useful commands for this project.
+``` console
+dev                            Run the project in watch mode, any file changes will be reflected at runtime
+help                           Display this help
+http                           Run the project in http mode
+https                          Run the project in https mode
+tests                          Run all the tests
+```
+
+
 ### Prerequisites
 
 TODO: Explain which steps and dependencies are required to run and build the project (e.g., pip install -r requirements.txt)
