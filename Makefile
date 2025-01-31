@@ -16,11 +16,11 @@ https: ## Run the project in https mode
 	dotnet run -lp https --project StardewCalculator
 
 .PHONY: build
-build:
+build: ## Build a docker image
 	docker build . -t stardew:latest
 
-.PHONY: docker-run
-docker-run:
+.PHONY: docker-run 
+docker-run: ## Run the latest build of the docker image
 	docker run -p8080:8080 stardew
 
 .PHONY: tests
