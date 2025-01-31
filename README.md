@@ -36,7 +36,9 @@ architecture-beta
 
 You can run `make help` in the terminal to see the following useful commands for this project.
 ``` console
+build                          Build a docker image
 dev                            Run the project in watch mode, any file changes will be reflected at runtime
+docker-run                     Run the latest build of the docker image
 help                           Display this help
 http                           Run the project in http mode
 https                          Run the project in https mode
