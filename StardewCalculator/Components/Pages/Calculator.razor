@@ -5,22 +5,42 @@
 <PageTitle> StardewCalculator </PageTitle>
 <h3>Calculator</h3>
 
-<ul>
-    Result = <input @bind="result"/>
-</ul>
+<div class="calculator">
 
-<input placeholder="Calculate String" @bind="inputString" />
-<button @onclick="calculate">Calculate</button>
+    <div class="calculator__output">
+        <div class="calculator__output__result">
+            @calculator.lhs
+        </div>
+        <div class="calculator__output__current">
+            @calculator.rhs
+            <div class="calculator__output__operator">
+                [@calculator.op]
+            </div>
+        </div>
+    </div>
+    
+    <div class="calculator__keys">
+        <button @onclick="() => calculator.setOp('+')" class="calculator__key calculator__key--operator">+</button>
+        <button @onclick="() => calculator.setOp('-')" class="calculator__key calculator__key--operator">-</button>
+        <button @onclick="() => calculator.setOp('*')" class="calculator__key calculator__key--operator">&times;</button>
+        <button @onclick="() => calculator.setOp('/')" class="calculator__key calculator__key--operator">÷</button>
+        <button @onclick="() => calculator.add(7)" class="calculator__key">7</button>
+        <button @onclick="() => calculator.add(8)" class="calculator__key">8</button>
+        <button @onclick="() => calculator.add(9)" class="calculator__key">9</button>
+        <button @onclick="() => calculator.add(4)" class="calculator__key">4</button>
+        <button @onclick="() => calculator.add(5)" class="calculator__key">5</button>
+        <button @onclick="() => calculator.add(6)" class="calculator__key">6</button>
+        <button @onclick="() => calculator.add(1)" class="calculator__key">1</button>
+        <button @onclick="() => calculator.add(2)" class="calculator__key">2</button>
+        <button @onclick="() => calculator.add(3)" class="calculator__key">3</button>
+        <button @onclick="() => calculator.add(0)" class="calculator__key">0</button>
+        <button class="calculator__key">.</button>
+        <button @onclick="() => calculator.clear()" class="calculator__key">AC</button>
+        <button @onclick="() => calculator.calculate()" class="calculator__key calculator__key--enter">=</button>
+    </div>
+</div>
+
 
 @code {
-    private StringCalculator parser = new StringCalculator();
-    private float result = 0;
-    private string? inputString;
-    private void calculate()
-    {
-        if (!string.IsNullOrWhiteSpace(inputString))
-        {
-            result =  parser.stringToFloat(inputString);
-        }
-    }
+    private SimpleCalculator calculator = new SimpleCalculator();
 }
