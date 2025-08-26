@@ -26,7 +26,7 @@
 }
 
 .calculator__output__current {
-    display inline: 
+    display: inline;
     width: 50%;
     height: 100%;
     text-align: end;
