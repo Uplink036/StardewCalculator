@@ -1,63 +1,63 @@
 ﻿using System.Collections;
 
-namespace StardewCalculator.Components.Classes
+namespace StardewCalculator.Components.Classes;
+
+public class SimpleCalculator
 {
-    public class SimpleCalculator
+    public float lhs;
+    public float rhs;
+    public char op;
+    public SimpleCalculator() {
+        lhs = 0;
+        rhs = 0;
+        op = '=';
+    }
+
+    public float calculate()
     {
-        public float lhs;
-        public float rhs;
-        public char op;
-        public SimpleCalculator() {
-            lhs = 0;
-            rhs = 0;
-            op = '=';
-        }
-
-        public float calculate()
+        switch (op)
         {
-            switch (op)
-            {
-                case '+':
-                    lhs = lhs + rhs;
-                    break;
-                case '-':
-                    lhs = lhs - rhs;
-                    break;
-                case '*':
-                    lhs = lhs * rhs;
-                    break;
-                case '/':
-                    lhs = lhs / rhs;
-                    break;
-                case '=':
-                    lhs = rhs;
-                    break;
-                default:
-                    throw new InvalidOperationException();
-            }
-            rhs = 0;
-            return lhs;
-        }
-
-        public void setOp(char op)
-        {
-            if (lhs == 0)
-            {
+            case '+':
+                lhs = lhs + rhs;
+                break;
+            case '-':
+                lhs = lhs - rhs;
+                break;
+            case '*':
+                lhs = lhs * rhs;
+                break;
+            case '/':
+                lhs = lhs / rhs;
+                break;
+            case '=':
                 lhs = rhs;
-                rhs = 0;
-            }
-            this.op = op; 
+                break;
+            default:
+                throw new InvalidOperationException();
         }
+        rhs = 0;
+        return lhs;
+    }
 
-        public void add(float input)
+    public void setOp(char op)
+    {
+        if (lhs == 0)
         {
-
-            rhs = rhs * 10 + input; // Add the input to the number
+            lhs = rhs;
+            rhs = 0;
         }
+        this.op = op; 
+    }
 
-        public void clear()
-        {
-            lhs = 0;
-        }
+    public void add(float input)
+    {
+
+        rhs = rhs * 10 + input; // Add the input to the number
+    }
+
+    public void clear()
+    {
+        lhs = 0;
     }
 }
+
