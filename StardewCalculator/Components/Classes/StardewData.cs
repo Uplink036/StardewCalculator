@@ -18,7 +18,7 @@ public class StardewData
 
     public IEnumerable<ShopStock> data;
 
-    StardewData(bool vanillaShop, Shop shop = Shop.PIERRE)
+    public StardewData(bool vanillaShop, Shop shop = Shop.PIERRE)
     {
         this.vanillaShop = vanillaShop;
         CurrentShop = shop;
