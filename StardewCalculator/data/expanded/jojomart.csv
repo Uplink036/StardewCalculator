@@ -1,0 +1,30 @@
+Season,Crop,Seed Cost,Mature,Harvest
+Spring,Cauliflower,100,0,12
+Spring,Potato,62,0,6
+Spring,Kale,87,0,6
+Spring,Green Bean,75,10,3
+Spring,Parsnip,25,0,4
+Spring,Blue Jazz,37,0,7
+Spring,Tulip,25,0,6
+Summer,Melon,100,0,12
+Summer,Hops,75,11,1
+Summer,Hot Pepper,50,5,3
+Summer,Radish,50,0,6
+Summer,Tomato,62,11,4
+Summer,Poppy,125,0,7
+Summer,Summer Spangle,62,0,8
+Summer,Wheat,12,0,4
+Summer,Sunfloer,125,0,8
+Fall,Pumpkin,125,0,13
+Fall,Cranberry,300,7,5
+Fall,Grape,75,10,3
+Fall,Amaranth,87,0,7
+Fall,Fairy Rose,250,0,12
+Fall,Yam,75,0,10
+Fall,Bok Choy,62,0,4
+Fall,Eggplant,25,5,5
+Fall,Wheat,12,0,4
+Fall,Corn,187,14,4
+Fall,Sunflower,125,0,8
+Other,Joja Berry,6500,25,4
+Other,Joja Veggie,1254,0,13
