@@ -1,4 +1,4 @@
-Season,Crop,Seed Cost,Mature,Harvest
+Season,Crop,SeedCost,Mature,Harvest
 Spring,Coffee Bean,15,10,2
 Spring,Strawberry,100,8,4
 Spring,Rhubarb,100,0,13

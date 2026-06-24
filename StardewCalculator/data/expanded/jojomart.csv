@@ -1,4 +1,4 @@
-Season,Crop,Seed Cost,Mature,Harvest
+Season,Crop,SeedsCost,Mature,Harvest
 Spring,Cauliflower,100,0,12
 Spring,Potato,62,0,6
 Spring,Kale,87,0,6
