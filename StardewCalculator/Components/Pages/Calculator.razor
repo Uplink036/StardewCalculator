@@ -48,9 +48,25 @@
     https://www.daveabrock.com/2021/01/14/blast-off-blazor-search-box/
     -->
     <h3>Stardew valley components</h3>
-    <input type="text" placeholder="Strawberry...", name="search">
+    <input type="text" 
+        placeholder="Strawberry..." 
+        name="search" 
+        @bind-value=Data.SearchText 
+        @bind-value:event="oninput"
+    >
+    <br />
+
+    <div class="Stardew_components_stock">
+        @foreach (var stock in Data.FiltredData)
+        {
+            <div>
+                @stock.Crop
+            </div>
+        }
+    </div>
 </div>
 
 @code {
     private SimpleCalculator calculator = new SimpleCalculator();
+    private StardewData Data = new StardewData(true, shop: Shop.PIERRE);
 }

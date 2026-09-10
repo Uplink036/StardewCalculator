@@ -93,3 +93,8 @@
     overflow: hidden;
     color: hsl(202, 11%, 29%);
 }
+
+.Stardew_components_stock {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
