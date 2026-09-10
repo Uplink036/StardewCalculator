@@ -22,4 +22,13 @@ public class StardewDataTests
         Assert.That(jojaExpanded.data.Count(), Is.EqualTo(1));
         Assert.That(oasisExpanded.data.Count(), Is.EqualTo(1));
     }
+
+    [Test]
+    public void FilterData()
+    {
+        var pierresVanilla = new StardewData(true, Shop.PIERRE);
+        pierresVanilla.SearchText = "C";
+
+        Assert.That(pierresVanilla.FiltredData.Count, Is.EqualTo(2));
+    }
 }
