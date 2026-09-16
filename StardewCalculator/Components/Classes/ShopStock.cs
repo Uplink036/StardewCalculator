@@ -7,4 +7,9 @@ public class ShopStock
     required public int SeedCost { get; set; }
     required public int Mature { get; set; }
     required public int Harvest { get; set; }
+
+    public override string ToString()
+    {
+        return Crop;
+    }
 }

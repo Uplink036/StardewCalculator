@@ -53,4 +53,18 @@ public class StardewDataTests
 
         Assert.That(pierresVanilla.FiltredData.Count, Is.EqualTo(2));
     }
+
+    [Test]
+    public void ToStringVanillaPierres()
+    {
+        var pierresVanilla = new StardewData(true, Shop.PIERRE);
+        Assert.That(pierresVanilla.ToString(), Is.EqualTo("Vanilla PIERRE with crops: Coffee Bean, Pineapple, Pumpkin, Powdermelon, Ancient Fruit, Test Fruit"));
+    }
+
+    [Test]
+    public void ToStringExpandedOasis()
+    {
+        var pierresVanilla = new StardewData(false, Shop.OASIS);
+        Assert.That(pierresVanilla.ToString(), Is.EqualTo("Expanded OASIS with crops: Beets"));
+    }
 }

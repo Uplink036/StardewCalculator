@@ -61,5 +61,10 @@ public class StardewData
             }
         }
     }
+
+    public override string ToString()
+    {
+        return $"{(vanillaShop ? "Vanilla" : "Expanded")} {System.Enum.GetName(CurrentShop)} with crops: {string.Join(", ", data.Take(10).ToList())}";
+    }
     
 }
