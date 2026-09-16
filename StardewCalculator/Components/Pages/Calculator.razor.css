@@ -92,9 +92,30 @@
     max-inline-size: 22rem;
     overflow: hidden;
     color: hsl(202, 11%, 29%);
+    margin: 1em 0em 1em 0em;
+}
+
+.Stardew_components_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5px;
+    row-gap: 5px;
+    background-color: white;
+}
+.Stardew_components_grid > div {
+    background-color: #e8e8e8;
+}
+
+.Stardew_components_grid > div:nth-child(even) {
+    background-color: #adadad;
 }
 
 .Stardew_components_stock {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    border-color: #363636;
+    border-style: solid;
+}
+
+.Stardew_components_stock:hover {
+    border-color: #363636;
+    border-style: double;
 }
