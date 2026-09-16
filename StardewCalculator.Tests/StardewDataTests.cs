@@ -7,7 +7,7 @@ public class StardewDataTests
     public void LoadVanillaPierres()
     {
         var pierresVanilla = new StardewData(true, Shop.PIERRE);
-        Assert.That(pierresVanilla.data.Count(), Is.EqualTo(6), $"Loaded: {pierresVanilla}"));
+        Assert.That(pierresVanilla.data.Count(), Is.EqualTo(6), $"Loaded: {pierresVanilla}");
     }
 
     [Test]
