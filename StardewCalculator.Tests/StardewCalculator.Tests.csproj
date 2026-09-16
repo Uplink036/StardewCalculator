@@ -25,4 +25,12 @@
     <ProjectReference Include="..\StardewCalculator\StardewCalculator.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="data/**/*.csv">
+      <PublishState>DataFile</PublishState>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>True</Visible>
+    </Content>
+  </ItemGroup>
+
 </Project>

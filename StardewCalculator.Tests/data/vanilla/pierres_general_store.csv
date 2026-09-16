@@ -1,0 +1,7 @@
+Season,Crop,SeedCost,Mature,Harvest
+Spring,Coffee Bean,15,10,2
+Summer,Pineapple,150,14,7
+Fall,Pumpkin,100,0,13
+Winter,Powdermelon,30,0,7
+Other,Ancient Fruit,275,28,7
+Test,Test Fruit,1,2,3

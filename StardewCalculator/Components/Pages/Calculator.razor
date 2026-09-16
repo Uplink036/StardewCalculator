@@ -40,7 +40,31 @@
     </div>
 </div>
 
+<div class="Stardew_components">
+    <!-- 
+    Search bar
+    3x4 grid of icons? For later
+    Change shop thingy
+    https://www.daveabrock.com/2021/01/14/blast-off-blazor-search-box/
+    -->
+    <h3>Stardew valley components</h3>
+    <input type="text" 
+        placeholder="Strawberry..." 
+        name="search" 
+        @bind-value=Data.SearchText 
+        @bind-value:event="oninput"
+    >
+    <br />
+
+    <div class="Stardew_components_grid">
+        @foreach (var stock in Data.FiltredData)
+        {
+            <button @onclick="() => calculator.add(stock.SeedCost)" class="Stardew_components_stock">@stock.Crop</button>
+        }
+    </div>
+</div>
 
 @code {
     private SimpleCalculator calculator = new SimpleCalculator();
+    private StardewData Data = new StardewData(true, shop: Shop.PIERRE);
 }
