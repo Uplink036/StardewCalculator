@@ -59,9 +59,7 @@
     <div class="Stardew_components_grid">
         @foreach (var stock in Data.FiltredData)
         {
-            <div class="Stardew_components_stock">
-                @stock.Crop
-            </div>
+            <button @onclick="() => calculator.add(stock.SeedCost)" class="Stardew_components_stock">@stock.Crop</button>
         }
     </div>
 </div>
