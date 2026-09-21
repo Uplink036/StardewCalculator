@@ -1,0 +1,7 @@
+services:
+  stardew-calculator:
+    image: ghcr.io/uplink036/stardewcalculator:main
+    container_name: stardew-calculator
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
