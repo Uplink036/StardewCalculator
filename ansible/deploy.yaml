@@ -4,7 +4,7 @@
   become: "{{ deploy_become | default(false) }}"
   vars:
     compose_src: "{{ playbook_dir }}/compose.publish.yaml"
-    compose_dir: "{{ deploy_compose_dir | default(default('/home/' + (ansible_user | default('root'))) + '/stardewCalculator') }}"
+    compose_dir: "{{ deploy_compose_dir | default('/app/stardew') }}"
     compose_dest: "{{ compose_dir }}/compose.yaml"
     compose_env_dest: "{{ compose_dir }}/.env"
     deploy_user: "{{ ansible_user }}"
