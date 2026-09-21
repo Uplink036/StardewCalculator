@@ -1,12 +1,9 @@
 name: Main CI Deploy
 
 on:
-  push:
-    branches:
-      - 21-deployment-of-application
   workflow_run:
     workflows:
-      - Publish Containers
+      - Docker Publish
     types:
       - completed
   workflow_dispatch:
