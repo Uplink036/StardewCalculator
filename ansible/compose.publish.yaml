@@ -1,0 +1,7 @@
+services:
+  stardew-calculator:
+    image: ${APP_IMAGE}
+    container_name: stardew-calculator
+    ports:
+      - "8080:8080"
+    restart: unless-stopped

@@ -1,0 +1,65 @@
+name: Main CI Deploy
+
+on:
+  workflow_run:
+    workflows:
+      - Docker Publish
+    types:
+      - completed
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: stardewcalculator
+
+jobs:
+  deploy:
+    name: Deploy with Ansible
+    runs-on: ubuntu-latest
+    environment: Ansible
+    env:
+      DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
+      DEPLOY_USER: ${{ vars.DEPLOY_USER }}
+      DEPLOY_PORT: ${{ vars.DEPLOY_PORT }}
+      DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
+      GHCR_USERNAME: ${{ vars.GHCR_USERNAME }}
+      APP_IMAGE: ${{ vars.APP_IMAGE }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate required variables
+        run: |
+          test -n "$DEPLOY_HOST"
+          test -n "$DEPLOY_USER"
+          test -n "$DEPLOY_PORT"
+          test -n "$DEPLOY_PATH"
+          test -n "GHCR_USERNAME"
+          test -n "$APP_IMAGE"
+
+      - name: Install Ansible
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install ansible
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.ANSIBLE_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "${{ secrets.ANSIBLE_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Run Ansible deploy
+        run: |
+          cat > /tmp/inventory.ini <<EOF
+          [docker_hosts]
+          target ansible_host=${DEPLOY_HOST} ansible_user=${DEPLOY_USER} ansible_port=${DEPLOY_PORT}
+          EOF
+
+          ansible-playbook -i /tmp/inventory.ini ansible/deploy.yaml \
+            --private-key ~/.ssh/id_ed25519 \
+            -e "deploy_compose_dir=${DEPLOY_PATH}" \
+            -e "ghcr_username=${GHCR_USERNAME}" \
+            -e "app_image=${APP_IMAGE}"

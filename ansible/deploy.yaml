@@ -1,0 +1,54 @@
+---
+- name: Deploy Compose application to target hosts
+  hosts: docker_hosts
+  become: "{{ deploy_become | default(false) }}"
+  vars:
+    compose_src: "{{ playbook_dir }}/compose.publish.yaml"
+    compose_dir: "{{ deploy_compose_dir | default('/app/stardew') }}"
+    compose_dest: "{{ compose_dir }}/compose.yaml"
+    compose_env_dest: "{{ compose_dir }}/.env"
+    deploy_user: "{{ ansible_user }}"
+
+  tasks:
+    - name: Ensure deployment directory exists
+      file:
+        path: "{{ compose_dir }}"
+        state: directory
+        owner: "{{ deploy_user }}"
+        group: "{{ deploy_user }}"
+        mode: '0755'
+
+    - name: Copy Compose file into deployment directory
+      copy:
+        src: "{{ compose_src }}"
+        dest: "{{ compose_dest }}"
+        owner: "{{ deploy_user }}"
+        group: "{{ deploy_user }}"
+        mode: '0644'
+
+    - name: Validate required deploy variables
+      assert:
+        that:
+          - app_image is defined
+          - app_image | length > 0
+
+    - name: Write Compose environment file
+      copy:
+        dest: "{{ compose_env_dest }}"
+        owner: "{{ deploy_user }}"
+        group: "{{ deploy_user }}"
+        mode: '0600'
+        content: |
+          APP_IMAGE={{ app_image }}
+      no_log: true
+
+    - name: Check docker access
+      command: docker info
+      register: docker_info
+      failed_when: docker_info.rc != 0
+
+    - name: Pull images
+      command: docker compose --env-file {{ compose_env_dest }} -f {{ compose_dest }} pull
+
+    - name: Start stack
+      command: docker compose --env-file {{ compose_env_dest }} -f {{ compose_dest }} up -d --remove-orphans
