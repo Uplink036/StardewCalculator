@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Runs the tests before allowing you to commit. 
+
+make tests

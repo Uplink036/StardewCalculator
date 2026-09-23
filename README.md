@@ -62,6 +62,13 @@ TODO: Explain how unit- or integreation tests can be executed.
 
 TODO: Explain how to run the project (client, server etc.).
 
+## Development tools
+### Hooks
+To enable the git hooks setup for this repo specifically run:
+```bash
+git config --local core.hooksPath .githooks/
+```
+
 ## License
 
 TODO: Add license and copyright notice.
