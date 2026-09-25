@@ -26,3 +26,7 @@ docker-run: ## Run the latest build of the docker image
 .PHONY: tests
 tests: ## Run all the tests
 	dotnet test
+
+.PHONY: lint
+lint: ## Run the linter
+	dotnet format
