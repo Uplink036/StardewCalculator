@@ -1,8 +1,9 @@
 namespace StardewCalculator.Components.Classes;
 
-using System.Globalization;
-using CsvHelper;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+
+using CsvHelper;
 
 
 public enum Shop
