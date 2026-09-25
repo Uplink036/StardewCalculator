@@ -66,5 +66,5 @@ public class StardewData
     {
         return $"{(vanillaShop ? "Vanilla" : "Expanded")} {System.Enum.GetName(CurrentShop)} with crops: {string.Join(", ", data.Take(10).ToList())}";
     }
-    
+
 }

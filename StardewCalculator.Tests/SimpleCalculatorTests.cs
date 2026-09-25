@@ -47,7 +47,7 @@ public class SimpleCalculatorTests
     }
     [Test]
     public void TestSetOp()
-    { 
+    {
         SimpleCalculator calculator = new SimpleCalculator();
         calculator.add(1);
         calculator.setOp('+');
