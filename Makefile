@@ -29,4 +29,8 @@ tests: ## Run all the tests
 
 .PHONY: lint
 lint: ## Run the linter
+	dotnet format --verify-no-changes
+
+.PHONY: format
+format: ## Run the formatter
 	dotnet format
