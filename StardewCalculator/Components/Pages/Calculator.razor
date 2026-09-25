@@ -11,11 +11,9 @@
         <div class="calculator__output__result">
             @calculator.lhs
         </div>
-        <div class="calculator__output__current">
-            @calculator.rhs
-            <div class="calculator__output__operator">
-                [@calculator.op]
-            </div>
+        <input type="text" class="calculator__output__current" value="@calculator.rhs" @onkeydown="HandleKeyDown">
+        <div class="calculator__output__operator">
+            [@calculator.op]
         </div>
     </div>
     
@@ -67,4 +65,24 @@
 @code {
     private SimpleCalculator calculator = new SimpleCalculator();
     private StardewData Data = new StardewData(true, shop: Shop.PIERRE);
+
+    private void HandleKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            calculator.calculate();
+        }
+        else if (e.Key == "Escape")
+        {
+            calculator.clear();
+        }
+        else
+        {
+            int results = HandleStringResponse(e.Key);
+            if (results != -1)
+            {
+                calculator.add(results);
+            }
+        }
+    }
 }
