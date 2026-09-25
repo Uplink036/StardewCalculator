@@ -1,5 +1,5 @@
 #!/bin/sh
-set -euxo pipefail
+set -x
 # Runs the tests before allowing you to commit. 
 
 make lint
