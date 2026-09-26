@@ -1,8 +1,9 @@
 namespace StardewCalculator.Components.Classes;
 
-using System.Globalization;
-using CsvHelper;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+
+using CsvHelper;
 
 
 public enum Shop
@@ -66,5 +67,5 @@ public class StardewData
     {
         return $"{(vanillaShop ? "Vanilla" : "Expanded")} {System.Enum.GetName(CurrentShop)} with crops: {string.Join(", ", data.Take(10).ToList())}";
     }
-    
+
 }

@@ -7,7 +7,8 @@ public class SimpleCalculator
     public float lhs;
     public float rhs;
     public char op;
-    public SimpleCalculator() {
+    public SimpleCalculator()
+    {
         lhs = 0;
         rhs = 0;
         op = '=';
@@ -46,7 +47,7 @@ public class SimpleCalculator
             lhs = rhs;
             rhs = 0;
         }
-        this.op = op; 
+        this.op = op;
     }
 
     public void add(float input)
