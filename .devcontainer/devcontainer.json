@@ -9,7 +9,8 @@
 			"extensions": [
 				"ms-dotnettools.csdevkit",
 				"bierner.markdown-mermaid",
-				"mechatroner.rainbow-csv"
+				"mechatroner.rainbow-csv",
+				"Forms.nunit-test-runner"
 			]
 		}
 	}
