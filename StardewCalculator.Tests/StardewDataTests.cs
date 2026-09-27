@@ -56,8 +56,8 @@ public class StardewDataTests
         ShopStock ancientFruit = pierresVanilla.data.Find(stock => stock.Crop == "Ancient Fruit");
         int ancientFruitExpectedIndex = 0;
         
-        Assert.That(pierresVanilla.FiltredData.ElementAt(ancientFruitExpectedIndex), Is.EqualTo(ancientFruit), $"Ancient Fruit not at index {ancientFruitExpectedIndex}");
-        Assert.That(pierresVanilla.FiltredData.ElementAt(coffeeExpectedIndex), Is.EqualTo(coffee), $"Coffee Bean not at index {coffeeExpectedIndex}");
+        Assert.That(pierresVanilla.FiltredData.ElementAt(ancientFruitExpectedIndex), Is.EqualTo(ancientFruit), $"{ancientFruit} not at index {ancientFruitExpectedIndex}");
+        Assert.That(pierresVanilla.FiltredData.ElementAt(coffeeExpectedIndex), Is.EqualTo(coffee), $"{coffee} not at index {coffeeExpectedIndex}");
     }
 
     [Test]
