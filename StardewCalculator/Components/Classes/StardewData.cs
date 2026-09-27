@@ -24,7 +24,9 @@ public class StardewData
 
     public List<ShopStock> FiltredData => data.Where(
         stock => stock.Crop.ToLower().Contains(SearchText.ToLower())
-    ).ToList();
+    )
+    .OrderBy(stock => stock.Crop)
+    .ToList();
 
     public StardewData(bool vanillaShop, Shop shop = Shop.PIERRE)
     {
