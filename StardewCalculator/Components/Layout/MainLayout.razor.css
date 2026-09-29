@@ -1,7 +1,8 @@
 .page {
-    --background-color: #53b5fa;
-    --box-border-color: #ffac05;
-    --box-fill-color: #fac863;
+    --background-color: #9dc4f5;
+    --box-border-color: #111822;
+    --box-fill-color: #f8c98f;
+    --gray-option: #55657b;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -15,7 +16,7 @@ main {
 
 .top-row {
     background-color: var(--background-color);
-    border-bottom: 4px solid var(--box-border-color);
+    border-bottom: 4px solid #ffac05;
     justify-content: flex-start;
     height: 3.5rem;
     display: flex;
