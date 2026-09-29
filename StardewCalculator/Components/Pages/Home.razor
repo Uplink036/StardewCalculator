@@ -1,7 +1,112 @@
-﻿@page "/"
+﻿@using StardewCalculator.Components.Classes
 
-<PageTitle>Home</PageTitle>
+@page "/"
+@rendermode InteractiveServer
+<PageTitle> StardewCalculator </PageTitle>
+<div class="layout">
+    <div class="sprinklers panel">
+        <h3>Sprinklers</h3>
+        <table>
+            <tr>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>Basic Sprinkler</td>
+            </tr>
+            <tr>
+                <td>Basic Sprinkler + Nozzle</td>
+            </tr>
+            <tr>
+                <td>Quality Sprinkler</td>
+            </tr>
+            <tr>
+                <td>Quality Sprinkler + Nozzle</td>
+            </tr>
+            <tr>
+                <td>Iridium Sprinkler</td>
+            </tr>
+            <tr>
+                <td>Iridium Sprinkler + Nozzle</td>
+            </tr>
+        </table>
+    </div>
 
-<h1>Hello, world!</h1>
+    <div class="calculator panel">
+        <h3>Calculator</h3>
 
-Welcome to your new app.
+        <div class="calculator__output">
+            <div class="calculator__output__expression">
+                @calculator.rhs
+            </div>
+            <div class="calculator__output__result">
+                =@calculator.lhs
+            </div>
+            <div class="calculator__output__operator">
+                [@calculator.op]
+            </div>
+        </div>
+
+        <div class="calculator__body">
+            <div class="calculator__keys">
+                <button @onclick="() => calculator.setOp('+')" class="calculator__key calculator__key--operator">+</button>
+                <button @onclick="() => calculator.setOp('-')" class="calculator__key calculator__key--operator">-</button>
+                <button @onclick="() => calculator.setOp('*')" class="calculator__key calculator__key--operator">&times;</button>
+                <button @onclick="() => calculator.setOp('/')" class="calculator__key calculator__key--operator">÷</button>
+                <button @onclick="() => calculator.add(7)" class="calculator__key">7</button>
+                <button @onclick="() => calculator.add(8)" class="calculator__key">8</button>
+                <button @onclick="() => calculator.add(9)" class="calculator__key">9</button>
+                <button @onclick="() => calculator.add(4)" class="calculator__key">4</button>
+                <button @onclick="() => calculator.add(5)" class="calculator__key">5</button>
+                <button @onclick="() => calculator.add(6)" class="calculator__key">6</button>
+                <button @onclick="() => calculator.add(1)" class="calculator__key">1</button>
+                <button @onclick="() => calculator.add(2)" class="calculator__key">2</button>
+                <button @onclick="() => calculator.add(3)" class="calculator__key">3</button>
+                <button @onclick="() => calculator.add(0)" class="calculator__key">0</button>
+                <button class="calculator__key">.</button>
+                <button @onclick="() => calculator.clear()" class="calculator__key">AC</button>
+                <button @onclick="() => calculator.calculate()" class="calculator__key calculator__key--enter">=</button>
+            </div>
+
+            <div class="calculator__history">
+                <h4>History</h4>
+                <ul>
+                    <li>Result 1</li>
+                    <li>Result 2</li>
+                    <li>Result 3</li>
+                    <li>Result 4</li>
+                    <li>Result 5</li>
+                    <li>Result 6</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="Stardew_components panel">
+    <!-- 
+    Search bar
+    3x4 grid of icons? For later
+    Change shop thingy
+    https://www.daveabrock.com/2021/01/14/blast-off-blazor-search-box/
+    -->
+    <h3>Seeds</h3>
+    <input type="text" 
+        placeholder="Strawberry..." 
+        name="search" 
+        @bind-value=Data.SearchText 
+        @bind-value:event="oninput"
+    >
+    <br />
+
+        <div class="Stardew_components_grid">
+            @foreach (var stock in Data.FiltredData)
+            {
+                <button @onclick="() => calculator.add(stock.SeedCost)" class="Stardew_components_stock">@stock.Crop</button>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private SimpleCalculator calculator = new SimpleCalculator();
+    private StardewData Data = new StardewData(true, shop: Shop.PIERRE);
+}

@@ -1,21 +1,23 @@
 .page {
+    --background-color: #9dc4f5;
+    --box-border-color: #111822;
+    --box-fill-color: #f8c98f;
+    --gray-option: #55657b;
     position: relative;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 main {
+    background-color: var(--background-color);
     flex: 1;
 }
 
-.sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
-}
-
 .top-row {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
+    background-color: var(--background-color);
+    border-bottom: 4px solid #ffac05;
+    justify-content: flex-start;
     height: 3.5rem;
     display: flex;
     align-items: center;
