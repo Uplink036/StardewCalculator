@@ -1,2 +1,2 @@
-Season,Crop,SeedCost,Mature,Harvest
+Season,Crop,SeedCost,DaysToMature,DaysForRegrowth
 Fall,Sweet Potato,81,12,1

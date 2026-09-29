@@ -1,2 +1,2 @@
-Season,Crop,SeedCost,Mature,Harvest
+Season,Crop,SeedCost,DaysToMature,DaysForRegrowth
 Fall,Amaranth,70,7,6

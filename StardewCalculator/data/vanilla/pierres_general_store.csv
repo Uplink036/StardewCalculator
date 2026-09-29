@@ -1,5 +1,5 @@
-Season,Crop,SeedCost,Mature,Harvest
 Spring,Coffee Bean,15,10,2
+Season,Crop,SeedCost,DaysToMature,DaysForRegrowth
 Spring,Strawberry,100,8,4
 Spring,Rhubarb,100,0,13
 Spring,Cauliflower,80,0,12

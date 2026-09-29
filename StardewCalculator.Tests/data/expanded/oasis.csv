@@ -1,2 +1,2 @@
-Season,Crop,SeedCost,Mature,Harvest
+Season,Crop,SeedCost,DaysToMature,DaysForRegrowth
 Fall,Beets,20,6,1

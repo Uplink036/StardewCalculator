@@ -1,2 +1,2 @@
-Season,Crop,SeedCost,Mature,Harvest
+Season,Crop,SeedCost,DaysToMature,DaysForRegrowth
 Spring,Joja Cola,5,15,2

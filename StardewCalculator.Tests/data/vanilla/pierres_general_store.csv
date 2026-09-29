@@ -1,4 +1,4 @@
-Season,Crop,SeedCost,Mature,Harvest
+Season,Crop,SeedCost,DaysToMature,DaysForRegrowth
 Spring,Coffee Bean,15,10,2
 Summer,Pineapple,150,14,7
 Fall,Pumpkin,100,0,13

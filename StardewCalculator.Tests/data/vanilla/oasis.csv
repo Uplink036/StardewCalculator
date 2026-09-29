@@ -1,2 +1,2 @@
-Season,Crop,SeedCost,Mature,Harvest
+Season,Crop,SeedCost,DaysToMature,DaysForRegrowth
 Summer,Piña Colada,3,1,1
