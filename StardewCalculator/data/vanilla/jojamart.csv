@@ -1,0 +1,26 @@
+Season,Crop,SeedCost,DaysToMature,DaysForRegrowth
+Spring,Cauliflower,100,12,0
+Spring,Potato,62,6,0
+Spring,Kale,87,6,0
+Spring,Green Bean,75,10,3
+Spring,Parsnip,25,4,0
+Spring,Blue Jazz,37,7,0
+Spring,Tulip,25,6,0
+Summer,Melon,100,12,0
+Summer,Hops,75,11,1
+Summer,Hot Pepper,50,5,3
+Summer,Radish,50,6,0
+Summer,Tomato,62,11,4
+Summer,Poppy,125,7,0
+Summer,Summer Spangle,62,8,0
+Fall,Pumpkin,125,13,0
+Fall,Cranberry,300,7,5
+Fall,Grape,75,10,3
+Fall,Amaranth,87,7,0
+Fall,Fairy Rose,250,12,0
+Fall,Yam,75,10,0
+Fall,Bok Choy,62,4,0
+Fall,Eggplant,25,5,5
+Multiple,Corn,187,14,4
+Multiple,Sunflower,125,8,0
+Multiple,Wheat,10,0,4
