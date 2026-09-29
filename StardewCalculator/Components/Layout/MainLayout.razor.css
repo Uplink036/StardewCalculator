@@ -1,7 +1,7 @@
 .page {
     --background-color: #53b5fa;
-    --box-border-color: #fdb119;
-    --box-fill-color: #fdb119;
+    --box-border-color: #ffac05;
+    --box-fill-color: #fac863;
     position: relative;
     display: flex;
     flex-direction: column;
