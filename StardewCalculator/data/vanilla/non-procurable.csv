@@ -1,0 +1,10 @@
+Season,Crop,SeedCost,DaysToMature,Harvest
+Spring,Carrot,0,0,3
+Summer,Pineapple,0,14,7
+Summer,Taro Root,0,10,0
+Summer,Summer Squash,0,6,3
+Fall,Sweet Gem Berry,1000,24,0
+Fall,Broccoli,0,8,4
+Winter,Powdermelon,0,7,0
+Multiple,Coffee Bean,1000,10,2
+Multiple,Ancient Fruit,0,28,7
