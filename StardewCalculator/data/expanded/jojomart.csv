@@ -1,30 +1,32 @@
 Season,Crop,SeedsCost,DaysToMature,DaysForRegrowth
-Spring,Cauliflower,100,0,12
-Spring,Potato,62,0,6
-Spring,Kale,87,0,6
-Spring,Green Bean,75,10,3
-Spring,Parsnip,25,0,4
-Spring,Blue Jazz,37,0,7
-Spring,Tulip,25,0,6
-Summer,Melon,100,0,12
-Summer,Hops,75,11,1
-Summer,Hot Pepper,50,5,3
-Summer,Radish,50,0,6
-Summer,Tomato,62,11,4
-Summer,Poppy,125,0,7
-Summer,Summer Spangle,62,0,8
-Summer,Wheat,12,0,4
-Summer,Sunfloer,125,0,8
-Fall,Pumpkin,125,0,13
-Fall,Cranberry,300,7,5
-Fall,Grape,75,10,3
-Fall,Amaranth,87,0,7
-Fall,Fairy Rose,250,0,12
-Fall,Yam,75,0,10
-Fall,Bok Choy,62,0,4
-Fall,Eggplant,25,5,5
-Fall,Wheat,12,0,4
-Fall,Corn,187,14,4
-Fall,Sunflower,125,0,8
-Other,Joja Berry,6500,25,4
-Other,Joja Veggie,1254,0,13
+Spring,Cauliflower,72,12,0
+Spring,Potato,45,6,0
+Spring,Kale,63,6,0
+Spring,Green Bean,54,10,3
+Spring,Parsnip,18,4,0
+Spring,Blue Jazz,27,7,0
+Spring,Tulip,18,6,0
+Spring,Cucumber,135,12,2
+Summer,Melon,72,12,0
+Summer,Hops,54,11,1
+Summer,Hot Pepper,36,5,3
+Summer,Radish,36,6,0
+Summer,Tomato,45,11,4
+Summer,Poppy,90,7,0
+Summer,Summer Spangle,45,8,0
+Summer,Butternut Squash,54,12,0
+Summer,Blueberry,72,13,4
+Fall,Pumpkin,90,13,0
+Fall,Cranberry,216,7,5
+Fall,Grape,54,10,3
+Fall,Amaranth,63,7,0
+Fall,Fairy Rose,180,12,0
+Fall,Yam,54,10,0
+Fall,Bok Choy,45,4,0
+Fall,Eggplant,18,5,5
+Fall,Sweet Potato,81,12,0
+Multiple,Corn,135,14,4
+Multiple,Sunflower,180,8,0
+Multiple,Wheat,9,0,4
+Multiple,Joja Berry,6500,25,4
+Multiple,Joja Veggie,1254,0,13
