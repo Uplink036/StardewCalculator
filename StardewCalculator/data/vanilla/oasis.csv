@@ -1,5 +1,5 @@
 Season,Crop,SeedCost,DaysToMature,DaysForRegrowth
-Other,Cactus,150,12,3
-Spring,Rhubarb,100,0,13
-Summer,Starfruit,400,0,13
-Fall,Beet,20,0,6
+Spring,Rhubarb,100,13,0
+Summer,Starfruit,400,13,0
+Fall,Beet,20,6,0
+Multiple,Cactus,150,12,3
