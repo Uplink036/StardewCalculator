@@ -11,6 +11,7 @@ public enum Shop
     PIERRE,
     JOJAMART,
     OASIS,
+    NON_PURCURABLE,
 }
 
 public class StardewData
@@ -48,6 +49,9 @@ public class StardewData
                 break;
             case Shop.OASIS:
                 filepath += "oasis.csv";
+                break;
+            case Shop.NON_PURCURABLE:
+                filepath += "non-pocurables.csv";
                 break;
             default:
                 throw new Exception("Unknown shop. Unable to load data");

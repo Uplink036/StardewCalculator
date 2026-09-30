@@ -25,6 +25,13 @@ public class StardewDataTests
     }
 
     [Test]
+    public void LoadVanillaNonPocurables()
+    {
+        var nonPocurablesVanilla = new StardewData(true, Shop.NON_PURCURABLE);
+        Assert.That(nonPocurablesVanilla.data.Count(), Is.EqualTo(1), $"Loaded: {nonPocurablesVanilla}");
+    }
+
+    [Test]
     public void LoadExpandedPierres()
     {
         var pierresExpanded = new StardewData(false, Shop.PIERRE);
