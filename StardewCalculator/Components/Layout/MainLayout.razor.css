@@ -1,21 +1,27 @@
 .page {
+    --background-colour: #3a5ea8;
+    --box-border-colour: #111822;
+    --box-fill-colour: #f8c98f;
+    --gray-option: #55657b;
+    /* --header-colour: #f8c98f; */
+    --header-colour: #9dc4f5;
+    --panel-background: #9dc4f5;
     position: relative;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 main {
+    background-color: var(--background-colour);
     flex: 1;
 }
 
-.sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
-}
-
 .top-row {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
+    background-color: var(--header-colour);
+    /* border-bottom: 4px solid #ffac05; */
+    /* border-bottom: 4px solid #ffffff; */
+    justify-content: flex-start;
     height: 3.5rem;
     display: flex;
     align-items: center;
