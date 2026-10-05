@@ -70,12 +70,10 @@
             <div class="calculator__history">
                 <h4>History</h4>
                 <ul>
-                    <li>Result 1</li>
-                    <li>Result 2</li>
-                    <li>Result 3</li>
-                    <li>Result 4</li>
-                    <li>Result 5</li>
-                    <li>Result 6</li>
+                    @foreach (float entry in calculator.getHistory())
+                    {
+                        <li>@entry</li>
+                    }
                 </ul>
             </div>
         </div>
