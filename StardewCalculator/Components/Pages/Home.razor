@@ -70,9 +70,13 @@
             <div class="calculator__history">
                 <h4>History</h4>
                 <ul>
+                    @{
+                        int historyCountIndex = 1;
+                    }
                     @foreach (float entry in calculator.getHistory())
                     {
-                        <li>@entry</li>
+                        <li>@historyCountIndex: @entry</li>
+                        historyCountIndex++;
                     }
                 </ul>
             </div>
