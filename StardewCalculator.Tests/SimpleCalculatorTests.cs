@@ -68,4 +68,29 @@ public class SimpleCalculatorTests
         Assert.That(calculator.lhs, Is.EqualTo(1.0F));
     }
 
+
+    [Test]
+    public void TestGetHistory()
+    {
+        SimpleCalculator calculator = new SimpleCalculator();
+        calculator.add(1);
+        calculator.calculate();
+        List<float> history = calculator.getHistory();
+        Assert.That(history, Is.Not.Null, "History should not be null after a calculation.");
+        Assert.That(history.Count, Is.EqualTo(1), "History should contain 1 entry after a single calculation.");
+        Assert.That(history[0], Is.EqualTo(1.0F), "First history entry should be 1.0F.");
+    }
+
+    [Test]
+    public void TestHistoryAfterClear()
+    {
+        SimpleCalculator calculator = new SimpleCalculator();
+        calculator.add(1);
+        calculator.calculate();
+        calculator.clear();
+        List<float> history = calculator.getHistory();
+        Assert.That(history, Is.Not.Null, "History should not be null after clearing the calculator.");
+        Assert.That(history.Count, Is.EqualTo(0), "History should be empty after clearing the calculator.");
+    }
+
 }
