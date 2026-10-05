@@ -93,4 +93,61 @@ public class SimpleCalculatorTests
         Assert.That(history.Count, Is.EqualTo(0), "History should be empty after clearing the calculator.");
     }
 
+    [Test]
+    public void TestHistoryAfterFiveCalculations()
+    {
+        SimpleCalculator calculator = new SimpleCalculator();
+        calculator.add(1);
+        calculator.calculate();
+        calculator.add(2);
+        calculator.calculate();
+        calculator.add(3);
+        calculator.calculate();
+        calculator.add(4);
+        calculator.calculate();
+        calculator.add(5);
+        calculator.calculate();
+        List<float> history = calculator.getHistory();
+        Assert.That(history, Is.Not.Null);
+        Assert.That(history.Count, Is.EqualTo(5), "History should contain 5 entries after five calculations.");
+        Assert.That(history[0], Is.EqualTo(1.0F), "First history entry should be 1.0F.");
+        Assert.That(history[1], Is.EqualTo(2.0F), "Second history entry should be 2.0F.");
+        Assert.That(history[2], Is.EqualTo(3.0F), "Third history entry should be 3.0F.");
+        Assert.That(history[3], Is.EqualTo(4.0F), "Fourth history entry should be 4.0F.");
+        Assert.That(history[4], Is.EqualTo(5.0F), "Fifth history entry should be 5.0F.");
+    }
+    
+    [Test]
+    public void TestHistoryBeforeClear()
+    {
+        SimpleCalculator calculator = new SimpleCalculator();
+        List<float> history = calculator.getHistory();
+        Assert.That(history, Is.Not.Null, "History should not be null before clearing the calculator.");
+        Assert.That(history.Count, Is.EqualTo(0), "History should contain 0 entries before clearing the calculator.");
+    }
+
+    [Test]
+    public void TestHistoryWithAllOperations()
+    {
+        SimpleCalculator calculator = new SimpleCalculator();
+        calculator.add(1);
+        calculator.calculate();
+        calculator.setOp('*');
+        calculator.add(2);
+        calculator.calculate();
+        calculator.setOp('/');
+        calculator.add(3);
+        calculator.calculate();
+        calculator.setOp('-');
+        calculator.add(4);
+        calculator.calculate();
+        List<float> history = calculator.getHistory();
+        Assert.That(history, Is.Not.Null);
+        Assert.That(history.Count, Is.EqualTo(4), "History should contain 4 entries after four calculations.");
+        Assert.That(history[0], Is.EqualTo(1.0F), "First history entry should be 1.0F.");
+        Assert.That(history[1], Is.EqualTo(2.0F), "Second history entry should be 2.0F.");
+        Assert.That(history[2], Is.EqualTo(2/3.0F), "Third history entry should be 2/3.0F.");
+        Assert.That(history[3], Is.EqualTo(-10/3.0F), "Fourth history entry should be -10/3.0F.");
+    }
+
 }
