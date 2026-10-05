@@ -7,6 +7,7 @@ public class SimpleCalculator
     public float lhs;
     public float rhs;
     public char op;
+    private List<float> history = new List<float>();
     public SimpleCalculator()
     {
         lhs = 0;
@@ -37,6 +38,7 @@ public class SimpleCalculator
                 throw new InvalidOperationException();
         }
         rhs = 0;
+        history.Add(lhs);
         return lhs;
     }
 
@@ -59,6 +61,14 @@ public class SimpleCalculator
     public void clear()
     {
         lhs = 0;
+        rhs = 0;
+        op = '=';
+        history.Clear();
+    }
+
+    public List<float> getHistory()
+    {
+        return history;
     }
 }
 
