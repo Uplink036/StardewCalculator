@@ -72,8 +72,10 @@
                 <ul>
                     @{
                         int historyCountIndex = 1;
+                        List<float> history = calculator.getHistory();
+                        history.Reverse();
                     }
-                    @foreach (float entry in calculator.getHistory())
+                    @foreach (float entry in history.Take(10))
                     {
                         <li>@historyCountIndex: @entry</li>
                         historyCountIndex++;
