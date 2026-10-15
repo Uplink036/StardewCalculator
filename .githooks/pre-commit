@@ -1,6 +1,5 @@
 #!/bin/sh
-set -x
-# Runs the tests before allowing you to commit. 
+set -eux
 
 make lint
 make tests

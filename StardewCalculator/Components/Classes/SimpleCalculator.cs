@@ -7,7 +7,7 @@ public class SimpleCalculator
     public float lhs;
     public float rhs;
     public char op;
-    private List<float> history = new List<float>();
+    private readonly List<float> history = new List<float>();
     public SimpleCalculator()
     {
         lhs = 0;

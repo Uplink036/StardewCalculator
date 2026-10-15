@@ -31,13 +31,11 @@
         </table>
     </div>
 
-    <div class="calculator panel">
+    <div class="calculator panel" tabindex="0" @onkeydown="HandleKeyDown">
         <h3>Calculator</h3>
 
         <div class="calculator__output">
-            <div class="calculator__output__expression">
-                @calculator.rhs
-            </div>
+            <input type="text" class="calculator__output__expression" value="@calculator.rhs">
             <div class="calculator__output__result">
                 =@calculator.lhs
             </div>
@@ -113,4 +111,53 @@
 @code {
     private SimpleCalculator calculator = new SimpleCalculator();
     private StardewData Data = new StardewData(true, shop: Shop.PIERRE);
+
+    private void HandleKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            calculator.calculate();
+        }
+        else if (e.Key == "Escape")
+        {
+            calculator.clear();
+        }
+        else if (isDigit(e.Key))
+        {
+            calculator.add(int.Parse(e.Key));
+        }
+        else if (e.Key == "-")
+        {
+            calculator.setOp('-');
+            calculator.calculate();
+        }
+        else if (e.Key == "+")
+        {
+            calculator.setOp('+');
+            calculator.calculate();
+        }
+        else if (e.Key == "*")
+        {
+            calculator.setOp('*');
+            calculator.calculate();
+        }
+        else if (e.Key == "/")
+        {
+            calculator.setOp('/');
+            calculator.calculate();
+        }
+    }
+
+    private bool isDigit(string key)
+    {
+        if (string.IsNullOrEmpty(key) || key.Length != 1)
+        {
+            return false;
+        }
+        if (!char.IsDigit(key[0]))
+        {
+            return false;
+        }
+        return true;
+    }
 }
