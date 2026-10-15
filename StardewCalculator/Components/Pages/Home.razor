@@ -31,11 +31,11 @@
         </table>
     </div>
 
-    <div class="calculator panel">
+    <div class="calculator panel" tabindex="0" @onkeydown="HandleKeyDown">
         <h3>Calculator</h3>
 
         <div class="calculator__output">
-            <input type="text" class="calculator__output__expression" value="@calculator.rhs" @onkeydown="HandleKeyDown">
+            <input type="text" class="calculator__output__expression" value="@calculator.rhs">
             <div class="calculator__output__result">
                 =@calculator.lhs
             </div>

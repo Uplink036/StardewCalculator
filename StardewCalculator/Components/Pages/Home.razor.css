@@ -37,6 +37,8 @@
 }
 
 .calculator__output__expression {
+    background: var(--box-fill-colour);
+    border: 0rem;
     font-size: 2rem;
     letter-spacing: 0.02em;
     line-height: 1;
