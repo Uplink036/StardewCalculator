@@ -7,67 +7,98 @@ public class SimpleCalculatorTests
     {
 
     }
+
     [Test]
     public void TestSimpleCalculatorExist()
     {
         SimpleCalculator calculator = new SimpleCalculator();
-        Assert.IsNotNull(calculator);
+        Assert.IsNotNull(calculator, "The Calculator should not be null.");
     }
+
+    [Test]
+    public void TestAddMethodExists()
+    {
+        SimpleCalculator calculator = new SimpleCalculator();
+        Assert.That(calculator.add, Is.Not.Null, "The add method should exist.");
+        Assert.That(calculator.lhs, Is.EqualTo(0), "The initial value of lhs should be 0.");
+    }
+
     [Test]
     public void TestAdd()
     {
         SimpleCalculator calculator = new SimpleCalculator();
-        Assert.That(calculator.add, Is.Not.Null);
-        //Test 1-9
-        Assert.That(calculator.lhs, Is.EqualTo(0));
         calculator.add(1);
         calculator.calculate();
-        Assert.That(calculator.lhs, Is.EqualTo(1.0F));
-        Assert.That(calculator.lhs, Is.Not.EqualTo(0));
-        Assert.That(calculator.lhs, Is.EqualTo(1.0F));
-        for (int i = 2; i < 10; i++)
+        Assert.That(calculator.lhs, Is.Not.EqualTo(0), "The result of adding 1 should not be 0.");
+        Assert.That(calculator.lhs, Is.EqualTo(1.0F), "The result of adding 1 should be 1.0F.");
+    }
+
+    [Test]
+    public void TestAdd1To9()
+    {
+        SimpleCalculator calculator = new SimpleCalculator();
+        for (int i = 1; i < 10; i++)
         {
             calculator.add(i);
         }
         calculator.calculate();
-        Assert.That(calculator.lhs, Is.Not.EqualTo(0));
-        Assert.That(calculator.lhs, Is.EqualTo(23456789.0F));
+        Assert.That(calculator.lhs, Is.Not.EqualTo(0), "The result of adding the numbers 1 through 9 should not be 0.");
+        Assert.That(calculator.lhs, Is.EqualTo(123456789.0F), "The result of adding the numbers 1 through 9 should be 123456789.0F.");
     }
+
     [Test]
     public void TestClear()
     {
         SimpleCalculator calculator = new SimpleCalculator();
-        Assert.That(calculator.lhs, Is.EqualTo(0));
+        Assert.That(calculator.lhs, Is.EqualTo(0), "The initial value of lhs should be 0.");
         calculator.add(1);
         calculator.calculate();
-        Assert.That(calculator.lhs, Is.Not.EqualTo(0));
-        Assert.That(calculator.lhs, Is.EqualTo(1.0F));
         calculator.clear();
-        Assert.That(calculator.lhs, Is.EqualTo(0));
+        Assert.That(calculator.lhs, Is.EqualTo(0), "The value of lhs should be 0 after clearing the calculator.");
     }
+
     [Test]
-    public void TestSetOp()
+    public void TestSetOpPlus()
     {
         SimpleCalculator calculator = new SimpleCalculator();
         calculator.add(1);
         calculator.setOp('+');
         calculator.add(1);
         calculator.calculate();
-        Assert.That(calculator.lhs, Is.EqualTo(2.0F));
+        Assert.That(calculator.lhs, Is.EqualTo(2.0F), "The result of 1 + 1 should be 2.0F.");
+    }
+
+    [Test]
+    public void TestSetOpMinus()
+    {
+        SimpleCalculator calculator = new SimpleCalculator();
+        calculator.add(2);
         calculator.setOp('-');
         calculator.add(1);
         calculator.calculate();
-        Assert.That(calculator.lhs, Is.EqualTo(1.0F));
+        Assert.That(calculator.lhs, Is.EqualTo(1.0F), "The result of 2 - 1 should be 1.0F.");
+    }
+    [Test]
+    public void TestSetOpMultiply()
+    {
+        SimpleCalculator calculator = new SimpleCalculator();
+        calculator.add(2);
         calculator.setOp('*');
-        calculator.add(2);
+        calculator.add(3);
         calculator.calculate();
-        Assert.That(calculator.lhs, Is.EqualTo(2.0F));
-        calculator.setOp('/');
-        calculator.add(2);
-        calculator.calculate();
-        Assert.That(calculator.lhs, Is.EqualTo(1.0F));
+        Assert.That(calculator.lhs, Is.EqualTo(6.0F), "The result of 2 * 3 should be 6.0F.");
     }
 
+    [Test]
+    public void TestSetOpDivide()
+    {
+        SimpleCalculator calculator = new SimpleCalculator();
+        calculator.add(6);
+        calculator.setOp('/');
+        calculator.add(3);
+        calculator.calculate();
+        Assert.That(calculator.lhs, Is.EqualTo(2.0F), "The result of 6 / 3 should be 2.0F.");
+    }
 
     [Test]
     public void TestGetHistory()
@@ -116,7 +147,7 @@ public class SimpleCalculatorTests
         Assert.That(history[3], Is.EqualTo(4.0F), "Fourth history entry should be 4.0F.");
         Assert.That(history[4], Is.EqualTo(5.0F), "Fifth history entry should be 5.0F.");
     }
-    
+
     [Test]
     public void TestHistoryBeforeClear()
     {
@@ -146,8 +177,8 @@ public class SimpleCalculatorTests
         Assert.That(history.Count, Is.EqualTo(4), "History should contain 4 entries after four calculations.");
         Assert.That(history[0], Is.EqualTo(1.0F), "First history entry should be 1.0F.");
         Assert.That(history[1], Is.EqualTo(2.0F), "Second history entry should be 2.0F.");
-        Assert.That(history[2], Is.EqualTo(2/3.0F), "Third history entry should be 2/3.0F.");
-        Assert.That(history[3], Is.EqualTo(-10/3.0F), "Fourth history entry should be -10/3.0F.");
+        Assert.That(history[2], Is.EqualTo(2 / 3.0F), "Third history entry should be 2/3.0F.");
+        Assert.That(history[3], Is.EqualTo(-10 / 3.0F), "Fourth history entry should be -10/3.0F.");
     }
 
 }
